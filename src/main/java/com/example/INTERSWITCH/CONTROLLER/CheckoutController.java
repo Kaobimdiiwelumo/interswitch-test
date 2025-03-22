@@ -39,7 +39,7 @@ public class CheckoutController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("You must be logged in to checkout.");
         }
 
-        // Fetch the User entity from the database
+
         User user = userRepository.findById(userId).orElse(null);
         if (user == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found.");
