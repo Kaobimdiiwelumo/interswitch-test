@@ -72,7 +72,7 @@ public class CartService {
                 .orElseThrow(() -> new RuntimeException("Book not found"));
 
         Cart cartItem = cartRepository.findByUserAndBook(user, book)
-                .orElse(new Cart(user, book, 0)); // ✅ Constructor now exists
+                .orElse(new Cart(user, book, 0));
 
         cartItem.setQuantity(cartItem.getQuantity() + quantity);
         cartRepository.save(cartItem);

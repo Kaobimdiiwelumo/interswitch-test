@@ -19,7 +19,7 @@ public class CartController {
 
     @PostMapping("/add")
     public CartDTO addToCart(@RequestParam Long bookId, @RequestParam int quantity, HttpSession session) {
-        Long userId = (Long) session.getAttribute("userId"); // Get logged-in user from session
+        Long userId = (Long) session.getAttribute("userId");
         if (userId == null) {
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "You must be logged in to view the cart.", null);
         }

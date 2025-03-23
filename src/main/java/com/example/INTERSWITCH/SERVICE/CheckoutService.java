@@ -64,7 +64,7 @@ public class CheckoutService {
             case "WEB":
             case "USSD":
             case "TRANSFER":
-                return "SUCCESS"; // Simulating a successful payment
+                return "SUCCESS";
             default:
                 return "FAILED";
         }
